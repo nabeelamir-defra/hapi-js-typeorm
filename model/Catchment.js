@@ -1,24 +1,9 @@
-import { EntitySchema } from "typeorm";
+class Catchment {
+  constructor(id, name, rivers) {
+    this.id = id;
+    this.name = name;
+    this.rivers = rivers;
+  }
+}
 
-export default new EntitySchema({
-  name: "Catchment",
-  tableName: "rcr_catchment",
-  columns: {
-    id: {
-      primary: true,
-      type: "int",
-      generated: true,
-    },
-    name: {
-      type: "varchar",
-    },
-  },
-  relations: {
-    rivers: {
-      type: "one-to-many",
-      target: "River",
-      cascade: true,
-      inverseSide: "catchment",
-    },
-  },
-});
+export { Catchment };

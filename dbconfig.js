@@ -1,7 +1,7 @@
 import typeorm from "typeorm";
 
-import River from "./model/River.js";
-import Catchment from "./model/Catchment.js";
+import River from "./entity/RiverSchema.js";
+import Catchment from "./entity/CatchmentSchema.js";
 
 const dataSource = new typeorm.DataSource({
   type: "postgres",

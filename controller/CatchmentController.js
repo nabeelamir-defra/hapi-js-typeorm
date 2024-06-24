@@ -1,4 +1,5 @@
 import { dataSource } from "../dbconfig.js";
+import { Catchment } from "../model/Catchment.js";
 
 export default [
   {
@@ -6,7 +7,7 @@ export default [
     path: "/catchment",
     handler: async (request, h) => {
       try {
-        const catchementRpository = dataSource.getRepository("Catchment");
+        const catchementRpository = dataSource.getRepository(Catchment);
         const catchments = await catchementRpository.find({
           relations: ["rivers"],
         });
